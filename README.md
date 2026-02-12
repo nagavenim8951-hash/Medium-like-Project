@@ -1,21 +1,21 @@
-# 📝 Medium-Like Blog Application
+#  Medium-Like Blog Application
 
 A simple blog application inspired by Medium, built using Node.js, Express, and EJS.
 Users can log in and write blog posts which are displayed dynamically on the website.
 
 ---
 
-## 🚀 Features
+##  Features
 
-* 🔐 User Authentication (Login)
-* ✍️ Write a Blog functionality
-* 📰 Dynamically display blog posts
-* 📂 Server-side rendering using EJS
-* 🎨 Responsive UI using HTML & CSS
+*  User Authentication (Login)
+*  Write a Blog functionality
+*  Dynamically display blog posts
+*  Server-side rendering using EJS
+*  Responsive UI using HTML & CSS
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 **Frontend:**
 
@@ -34,7 +34,7 @@ Users can log in and write blog posts which are displayed dynamically on the web
 
 ---
 
-## 📌 How It Works
+##  How It Works
 
 1. User logs into the application.
 2. User clicks on the **"Write a Blog"** button.
@@ -77,7 +77,7 @@ http://localhost:3000
 
 ---
 
-## 📂 Project Structure (Basic)
+##  Project Structure (Basic)
 
 ```
 /project-folder
@@ -90,7 +90,7 @@ http://localhost:3000
 
 ---
 
-## 🌱 Future Improvements
+##  Future Improvements
 
 * Add Create, Edit, Delete (CRUD) functionality
 * Add user registration system
@@ -100,10 +100,10 @@ http://localhost:3000
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
-Nagaveni M
-Aspiring Full Stack Developer
+Nagaveni M,
+Aspiring Frontend Developer
 
 ---
 

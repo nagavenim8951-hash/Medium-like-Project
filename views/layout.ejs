@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medium(practice)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  
+<!-- ================= HERO SECTION (BEFORE LOGIN) ================= -->
+<!-- LANDING CONTENT START -->
+<div id="landingContent" class="bg-light">
+
+  <!-- HEADER -->
+  <header class="container-fluid bg-light sticky-top border-bottom">
+    <div class="container">
+      <div class="row align-items-center py-3">
+
+        <!-- LEFT -->
+        <div class="col-6 col-md-auto d-flex align-items-center">
+          <p class="hero-logo m-0">Medium</p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="col-6 col-md d-flex justify-content-end gap-2">
+
+          <button class="btn fs-6 fw-semibold d-none d-md-inline"
+                  onclick="goToStory()">Our story</button>
+
+          <button class="btn fs-6 fw-semibold d-none d-md-inline"
+                  onclick="openModel()">Membership</button>
+
+          <button class="btn fs-6 fw-semibold d-none d-md-inline"
+                  onclick="openModel()">Sign in</button>
+
+          <button class="btn fs-6 fw-semibold"
+                  onclick="openModel()">Write</button>
+
+          <button class="btn btn-dark rounded-pill fw-semibold px-3"
+                  onclick="openModel()">Get started</button>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO CONTENT -->
+  <section class="container py-5">
+    <div class="row align-items-center">
+
+      <!-- TEXT -->
+      <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+        <h1 class="hero-text">
+          Human <br class="d-none d-md-block"> stories & ideas
+        </h1>
+        <p class="fs-4">
+          A place to read, write, and deepen your understanding
+        </p>
+        <button class="btn btn-dark fs-5 px-5" onclick="openModel()">
+          Start reading
+        </button>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="col-12 col-md-6 text-center d-none d-md-block">
+        <img src="leaf.jpg" alt="Hero image" class="img-fluid" style="max-height:500px;">
+      </div>
+
+    </div>
+  </section>
+
+</div>
+<!-- LANDING CONTENT END -->
+
+<!-- ================= POPUP MODAL ================= -->
+<div id="popup" class="popup-overlay">
+  <div class="popup-box">
+
+    <div id="auth-options">
+      <button class="btn btn-outline-dark w-100 mb-2" onclick="showEmailForm()">Continue with Email</button>
+      <button class="btn btn-outline-dark w-100 mb-2">Continue with Phone</button>
+      <button class="btn btn-outline-dark w-100">Continue with Google</button>
+    </div>
+
+    <div id="email-form" style="display:none;">
+      <input type="email" id="email" class="form-control mb-2" placeholder="Enter your email">
+      <button class="btn btn-dark w-100" onclick="signInWithEmail()">Sign In</button>
+      <p class="small mt-3">
+        <a href="#" onclick="goBack()">← Back</a>
+      </p>
+    </div>
+
+    <button class="close-btn" onclick="closePopup()">×</button>
+  </div>
+</div>
+
+<!-- ================= MAIN APP CONTENT (AFTER LOGIN) ================= -->
+<div id="appContent" class="d-none">
+  <!-- HEADER -->
+  <header class="border-bottom py-2 sticky-top bg-white">
+    <div class="container-fluid">
+      <div class="row justify-content-between flex-nowrap">
+        <!-- LEFT -->
+        <div class="col-auto d-flex align-items-center gap-2">
+          <div class="d-md-none">
+           <button class="btn btn-outline-dark d-md-none" onclick="toggleSidebar()">☰</button>
+
+          </div>
+          <p class="hero-logo">Medium</p>
+          <div class="position-relative">
+            <ion-icon name="search-outline" class="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary"></ion-icon>
+            <input type="text" class="form-control form-control-sm rounded-pill ps-5" placeholder="Search">
+          </div>
+        </div>
+        <!-- RIGHT -->
+        <div class="col-auto d-flex align-items-center gap-2">
+          <!-- <button class="btn"><ion-icon name="pencil-outline" class="header-icon"></ion-icon> Write</button> -->
+           <a href="/write" class="anchor">Write</a>
+
+          <button class="btn"><ion-icon name="notifications-outline" class="header-icon"></ion-icon></button>
+          <button class="btn btn-dark" onclick="logout()">Profile</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<section class="mt-4">
+  <div class="container-fluid">
+
+    </div>
+
+    <div class="row">
+
+      <!-- LEFT SIDEBAR (hide on mobile) -->
+<!-- LEFT SIDEBAR -->
+<div id="leftSidebar" class="mobile-sidebar col-md-2 p-3 border-end">
+<!-- <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"> -->
+
+  <div class="d-flex flex-column gap-3">
+    <a href="/" class="anchor">
+      <ion-icon name="home-outline"></ion-icon> Home
+    </a>
+    <a href="/library" class="anchor">
+      <ion-icon name="library-outline"></ion-icon> Library
+    </a>
+    <a href="/profile" class="anchor">
+      <ion-icon name="person-outline"></ion-icon> Profile
+    </a>
+    <a href="#" class="anchor">
+      <ion-icon name="bookmark-outline"></ion-icon> Stories
+    </a>
+    <a href="#" class="anchor">
+      <ion-icon name="stats-chart-outline"></ion-icon> Stats
+    </a>
+  </div>
+</div>
+  
+
+      <!-- MIDDLE CONTENT (always visible) -->
+      <div class="col-12 col-md-8 p-3">
+        <% if (page) { %>
+  <%- include(page) %>
+<% } else { %>
+  <%- include('home') %>
+<% } %>
+
+      </div>
+
+      <!-- RIGHT SIDEBAR (hide on mobile) -->
+<div class="d-none d-md-block col-md-2 p-3 border-start">
+  <h6>Recomended Topics</h6>
+  <div class="recomendedtopics mt-3">
+    <a class="anchor bg-light rounded-pill p-1 fs-6">Java</a>
+    <a class="anchor bg-light rounded-pill p-1 fs-6">Promise</a>
+    <a class="anchor bg-light rounded-pill p-1 fs-6">Async Await</a>
+    <a class="anchor bg-light rounded-pill p-1 fs-6">HTML</a>
+    <a class="anchor bg-light rounded-pill p-1 fs-6">CSS</a>
+  </div>
+</div>
+</div>
+</div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+

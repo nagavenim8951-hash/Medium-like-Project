@@ -66,12 +66,6 @@ npm install
 4. Start the server:
 
 ```bash
-node app.js
-```
-
-or (if using nodemon):
-
-```bash
 npm run dev
 ```
 
